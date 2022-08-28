@@ -29,7 +29,7 @@ productname_ar=st.text_input("Product Name Arabic : ")
 tags=st.text_input("Tags : ").split(",")
 st.text("Example Tags : fresh, clean, new, sprayer, everyday use kitchen")
 category=st.selectbox("Select a Category : " , categories.keys(),key="cat")
-sub_cat=st.selectbox("Select a Sub-Category : " , categories[category],key="cat")
+sub_cat=st.selectbox("Select a Sub-Category : " , categories[category],key="subcat")
 store=st.selectbox("Select Store : ",['Alam-at tawfeeq', 'World of Saving',"other"])
 
 price=st.number_input("Price : ",5.75)
