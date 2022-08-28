@@ -7,6 +7,7 @@ from abo5s3 import *
 import time
 import datetime
 import requests
+from categories import categories  
 
 def imageprocessapi(links):
     session = requests.Session()
@@ -27,10 +28,7 @@ productname_en=st.text_input("Product Name Enlish : ", "",key="productnameen" )
 productname_ar=st.text_input("Product Name Arabic : ")
 tags=st.text_input("Tags : ").split(",")
 st.text("Example Tags : fresh, clean, new, sprayer, everyday use kitchen")
-category=st.selectbox("Select a category : ",['Not Selected','Occasions & Holidays', 'Household Gears',
-                                     'Antiques & Gifts','Cleaning & Plastics','Personal Care',
-                                    'Stationery & School Supplies','Accessories','MISCELLANEOUS',
-                                    'CLOTHES','FOOD'])
+category=st.selectbox("Select a category : " , categories.key())
 store=st.selectbox("Select Store : ",['Alam-at tawfeeq', 'World of Saving',"other"])
 
 price=st.number_input("Price : ",5.75)
