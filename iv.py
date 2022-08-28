@@ -28,7 +28,7 @@ productname_en=st.text_input("Product Name Enlish : ", "",key="productnameen" )
 productname_ar=st.text_input("Product Name Arabic : ")
 tags=st.text_input("Tags : ").split(",")
 st.text("Example Tags : fresh, clean, new, sprayer, everyday use kitchen")
-category=st.selectbox("Select a category : " , categories.key())
+category=st.selectbox("Select a category : " , categories.keys)
 store=st.selectbox("Select Store : ",['Alam-at tawfeeq', 'World of Saving',"other"])
 
 price=st.number_input("Price : ",5.75)
