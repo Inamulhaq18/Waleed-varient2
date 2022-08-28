@@ -217,7 +217,7 @@ if st.button("Submit"):
         st.write("Image Process Server.....")
 
         st.write(f'''
-          <a target="_self" href="https://share.streamlit.io/inamulhaq18/varient/main/iv.py">
+          <a target="_self" href="https://inamulhaq18-waleed-varient-iv-wix2hq.streamlitapp.com/">
               <button>
                   Reload
               </button>
