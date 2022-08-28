@@ -21,6 +21,7 @@ url="https://abo5.s3.eu-central-1.amazonaws.com/"
 #create a subheading 
 name="Waleed"
 st.header("Hi, " + name + "😃")
+st.write("2")
 #product name 
 productname_en=st.text_input("Product Name Enlish : ", "",key="productnameen" )
 productname_ar=st.text_input("Product Name Arabic : ")
