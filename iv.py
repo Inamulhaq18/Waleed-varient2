@@ -214,6 +214,7 @@ if st.button("Submit"):
                         Product_Name_ar=productname_ar, Product_Category=category,Tags=tags,Retail_outlet=store,
                         Product_price=price, Product_image_R_url=links, Product_image_P_url=linksp,user="Waleed",variety=varient) 
         st.success("Updated")
+        time.sleep(1)
         imageprocessapi(links)#processing the raw image heroku server
         st.write("Image Process Server.....")
 
