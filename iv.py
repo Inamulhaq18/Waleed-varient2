@@ -21,7 +21,6 @@ def imageprocessapi(links):
 def generatedesc(productname):
     session = requests.Session()
     session.trust_env = False
-    links=links
     url="https://abo5describtionapi.herokuapp.com/generate?productname="
     url=url+productname
     response = session.get(url)
