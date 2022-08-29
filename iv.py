@@ -17,6 +17,15 @@ def imageprocessapi(links):
     url=url+links
     response = session.get(url)
     print(response.content)
+ 
+def generatedesc(productname):
+    session = requests.Session()
+    session.trust_env = False
+    links=links
+    url="https://abo5describtionapi.herokuapp.com/generate?productname="
+    url=url+productname
+    response = session.get(url)
+    print(response.content)
 
 url="https://abo5.s3.eu-central-1.amazonaws.com/"
 #create a subheading 
@@ -216,6 +225,8 @@ if st.button("Submit"):
         time.sleep(1)
         imageprocessapi(links)#processing the raw image heroku server
         st.write("Image Process Server.....")
+        generatedesc(productname_en)
+        st.write("describtion gen Server.....")
 
         st.write(f'''
           <a target="_self" href="https://inamulhaq18-waleed-varient-iv-wix2hq.streamlitapp.com/">
