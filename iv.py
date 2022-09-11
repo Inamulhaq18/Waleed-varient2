@@ -8,6 +8,7 @@ import time
 import datetime
 import requests
 from categories import categories  
+import sys
 
 def imageprocessapi(links):
     session = requests.Session()
@@ -209,7 +210,7 @@ urllist=[]
 if st.button("Submit"):
     if productname_en=="" or links=="":
         st.write("Product Name/Images_uploaded cannot be empty")
-        exit()
+        sys.exit()
     with st.spinner('Wait for it...'):
         for uploaded_file in uploaded_files:
             bytes_data = uploaded_file.read()
