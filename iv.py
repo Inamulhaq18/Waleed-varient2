@@ -210,7 +210,6 @@ urllist=[]
 if st.button("Submit"):
     if productname_en=="" or links=="":
         st.write("Product Name/Images_uploaded cannot be empty")
-        sys.exit()
     else:
         with st.spinner('Wait for it...'):
             for uploaded_file in uploaded_files:
