@@ -209,7 +209,7 @@ linksp=""
 urllist=[]
 if st.button("Submit"):
     if productname_en=="" or len(uploaded_files)==0:
-        st.header("🤬 HEYYYY! Product Name/Images_uploaded cannot be empty")
+        st.header("😡 HEYYYY! Product Name and Images_uploaded cannot be empty")
     else:
         with st.spinner('Wait for it...'):
             for uploaded_file in uploaded_files:
