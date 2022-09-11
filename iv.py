@@ -207,7 +207,7 @@ linksp=""
 #sumbit button
 urllist=[]
 if st.button("Submit"):
-    if (Product_Name_en=="" or links==""):
+    if Product_Name_en=="" or links=="":
         st.write("Product Name/Images_uploaded cannot be empty")
         exit()
     with st.spinner('Wait for it...'):
