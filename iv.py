@@ -211,32 +211,33 @@ if st.button("Submit"):
     if productname_en=="" or links=="":
         st.write("Product Name/Images_uploaded cannot be empty")
         sys.exit()
-    with st.spinner('Wait for it...'):
-        for uploaded_file in uploaded_files:
-            bytes_data = uploaded_file.read()
-            name=save_uploadedfile(uploaded_file)
-            #st.write(name)
-            #upload R to s3
-            
-            s3.Bucket('abo5').upload_file(Filename=name, Key=name)
-            urllist.append(url+name)
-        links = ", ".join(urllist)
-        status=update_product(Product_Entry_Timestamp=datetime.datetime.now(), Product_Name_en=productname_en,
-                        Product_Name_ar=productname_ar, Product_Category=category,Tags=tags,Retail_outlet=store,
-                        Product_price=price, Product_image_R_url=links, Product_image_P_url=linksp,user="Waleed",Product_subcategory=sub_cat, variety=varient) 
-        st.success("Updated")
-        time.sleep(1)
-        imageprocessapi(links)#processing the raw image heroku server
-        st.write("Image Process Server.....")
-        generatedesc(productname_en)
-        st.write("describtion gen Server.....")
+    else:
+        with st.spinner('Wait for it...'):
+            for uploaded_file in uploaded_files:
+                bytes_data = uploaded_file.read()
+                name=save_uploadedfile(uploaded_file)
+                #st.write(name)
+                #upload R to s3
 
-        st.write(f'''
-          <a target="_self" href="https://inamulhaq18-waleed-varient-iv-wix2hq.streamlitapp.com/">
-              <button>
-                  Reload
-              </button>
-          </a>
-          ''',
-          unsafe_allow_html=True
-        )
+                s3.Bucket('abo5').upload_file(Filename=name, Key=name)
+                urllist.append(url+name)
+            links = ", ".join(urllist)
+            status=update_product(Product_Entry_Timestamp=datetime.datetime.now(), Product_Name_en=productname_en,
+                            Product_Name_ar=productname_ar, Product_Category=category,Tags=tags,Retail_outlet=store,
+                            Product_price=price, Product_image_R_url=links, Product_image_P_url=linksp,user="Waleed",Product_subcategory=sub_cat, variety=varient) 
+            st.success("Updated")
+            time.sleep(1)
+            imageprocessapi(links)#processing the raw image heroku server
+            st.write("Image Process Server.....")
+            generatedesc(productname_en)
+            st.write("describtion gen Server.....")
+
+            st.write(f'''
+              <a target="_self" href="https://inamulhaq18-waleed-varient-iv-wix2hq.streamlitapp.com/">
+                  <button>
+                      Reload
+                  </button>
+              </a>
+              ''',
+              unsafe_allow_html=True
+            )
