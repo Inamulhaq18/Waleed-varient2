@@ -1,4 +1,4 @@
-categories={"OCCASIONS & HOLIDAYS":["Decoration",
+categories1={"OCCASIONS & HOLIDAYS":["Decoration",
 "Special Occasions",
 "Party Supplies", 
 "Graduation Parties",
