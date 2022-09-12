@@ -18,7 +18,7 @@ def imageprocessapi(links):
     url=url+links
     response = session.get(url)
     print(response.content)
- 
+
 def generatedesc(productname):
     session = requests.Session()
     session.trust_env = False
@@ -80,6 +80,7 @@ st.image(images,width=150,caption=lst)
 
 ###############################varient
 varient={}
+
 with st.expander("Varient", expanded=True):
     if len (uploaded_files)>0:
 
