@@ -7,7 +7,7 @@ from abo5s3 import *
 import time
 import datetime
 import requests
-from categories import categories  
+from categories import *
 import sys
 
 def imageprocessapi(links):
