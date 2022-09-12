@@ -31,17 +31,41 @@ url="https://abo5.s3.eu-central-1.amazonaws.com/"
 #create a subheading 
 name="Waleed"
 st.header("Hi, " + name + "😃")
-st.write("2")
 #product name 
 productname_en=st.text_input("Product Name Enlish : ", "",key="productnameen" )
-productname_ar=st.text_input("Product Name Arabic : ")
-tags=st.text_input("Tags : ").split(",")
-st.text("Example Tags : fresh, clean, new, sprayer, everyday use kitchen")
-category=st.selectbox("Select a Category : " , categories.keys(),key="cat")
-sub_cat=st.selectbox("Select a Sub-Category : " , categories[category],key="subcat")
-store=st.selectbox("Select Store : ",['Alam-at tawfeeq', 'World of Saving',"other"])
+#productname_ar=st.text_input("Product Name Arabic : ")
+productname_ar=""
+#tags=st.text_input("Tags : ").split(",")
+tags=""
+shape=st.selectbox("Select Shape/Materials : " , ['Select','Square','Rectangle','Circle','Triangle','Semi-Circle','others'],key="catsize")
+if shape=="others":
+   shape=st.text_input("Please mention the shape")
 
+sizecolor=st.selectbox("Select Size/Color : " , ["Select",'Size','Color'],key="catshape")
+if sizecolor=='Size':
+   sizecolor=st.multiselect("Select size", ["S", "M", "L", "XL", "XXL", "XXXL", "XXXXL"],key="line")
+if sizecolor=='Color':
+   sizecolor=st.multiselect("Select color",["red", "blue", "green", "yellow", "black", "white","Pink","transparent","Translucent"],key="line45")
+alsoknownas=st.text_input("Other Names : " , key="othername")
+if shape!='Select':
+    tags='''
+Shape/Materials : 
+{}
+    '''.format(shape)
+if sizecolor != 'Select':
+    tags=tags+'''
+Size/Color: 
+{}'''.format(",".join(sizecolor))
+
+if alsoknownas!="":
+    tags=tags+'''
+    Also known as:
+    {}'''.format(alsoknownas)
+category=st.selectbox("Select a Category : " , categories1.keys(),key="cat")
+sub_cat=st.selectbox("Select a Sub-Category : " , categories1[category],key="subcat")
+store=st.selectbox("Select Store : ",['Alam-at tawfeeq', 'World of Saving',"other"])
 price=st.number_input("Price : ",5.75)
+
 
 uploaded_files=st.file_uploader("Upload a file", type=["png", "jpg", "jpeg"], accept_multiple_files=True) 
 st.write(len(uploaded_files))
