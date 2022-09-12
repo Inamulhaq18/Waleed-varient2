@@ -8,7 +8,7 @@ import time
 import datetime
 import requests
 from categories import *
-import sys
+
 
 def imageprocessapi(links):
     session = requests.Session()
@@ -80,7 +80,6 @@ st.image(images,width=150,caption=lst)
 
 ###############################varient
 varient={}
-
 with st.expander("Varient", expanded=True):
     if len (uploaded_files)>0:
 
@@ -256,8 +255,9 @@ if st.button("Submit"):
             generatedesc(productname_en)
             st.write("describtion gen Server.....")
 
+
             st.write(f'''
-              <a target="_self" href="https://inamulhaq18-waleed-varient-iv-wix2hq.streamlitapp.com/">
+              <a target="_self" href="https://inamulhaq18-waleed-varient2-iv-g9mop1.streamlitapp.com/">
                   <button>
                       Reload
                   </button>
