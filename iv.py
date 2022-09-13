@@ -51,7 +51,7 @@ if shape!='Select':
     tags='''
 Shape/Materials : 
 {}
-    '''.format(shape)
+'''.format(shape)
 if sizecolor != 'Select':
     tags=tags+'''
 Size/Color: 
@@ -59,8 +59,8 @@ Size/Color:
 
 if alsoknownas!="":
     tags=tags+'''
-    Also known as:
-    {}'''.format(alsoknownas)
+Also known as:
+{}'''.format(alsoknownas)
 category=st.selectbox("Select a Category : " , categories1.keys(),key="cat")
 sub_cat=st.selectbox("Select a Sub-Category : " , categories1[category],key="subcat")
 store=st.selectbox("Select Store : ",['Alam-at tawfeeq', 'World of Saving',"other"])
