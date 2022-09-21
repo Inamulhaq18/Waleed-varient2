@@ -254,14 +254,4 @@ if st.button("Submit"):
             st.write("Image Process Server.....")
             generatedesc(productname_en)
             st.write("describtion gen Server.....")
-
-
-            st.write(f'''
-              <a target="_self" href="https://inamulhaq18-waleed-varient-iv-wix2hq.streamlitapp.com/">
-                  <button>
-                      Reload
-                  </button>
-              </a>
-              ''',
-              unsafe_allow_html=True
-            )
+            conn = None
